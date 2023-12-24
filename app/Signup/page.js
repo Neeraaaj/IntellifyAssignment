@@ -20,7 +20,7 @@ const Signup = () => {
         event.preventDefault();
         if(passwordOne === passwordTwo){
             createUserWithEmailAndPassword(auth,email, passwordOne)
-            .then(authUser => {
+            .then(() => {
                 toast.success("You have successfully created your account!")
                 router.push('/Login')
             })
