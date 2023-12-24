@@ -38,6 +38,9 @@ const Signup = () => {
     if (typeof window !== 'undefined') {
       console.log(window.innerWidth);
     }
+
+          if (typeof window === 'undefined') return;
+
   }, []);
   return (
     <section className="bg-white">
