@@ -9,11 +9,6 @@ import { useRouter } from 'next/navigation';
 
 const auth = getAuth(app)
 
-let foo = null;
-if (typeof window !== "undefined") {
-  foo = window.localStorage.getItem("foo");
-}
-
 const page = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -35,15 +30,6 @@ const page = () => {
             })
         }
     }
-
-    useEffect(() => {
-    if (typeof window !== 'undefined') {
-      console.log(window.innerWidth);
-    }
-
-    if (typeof window === 'undefined') return;
-
-  }, []);
   return (
     <section className="bg-white">
         <div className="lg:grid lg:min-h-screen lg:grid-cols-12">
