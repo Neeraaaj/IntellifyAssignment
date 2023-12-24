@@ -5,7 +5,6 @@ import Link from 'next/link'
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 import app from '../firebase';
 import toast from 'react-hot-toast';
-import { useRouter } from 'next/navigation';
 
 const auth = getAuth(app)
 
@@ -13,7 +12,6 @@ const page = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [isAuthenticated, setIsAuthenticated] = useState(false);
-    const router = useRouter()
     const handleLogin = (event) => {
         event.preventDefault();
         setIsAuthenticated(true)
@@ -23,7 +21,6 @@ const page = () => {
             .then(()  => {
                 toast.success(`Welcome ${email}`)
                 setIsAuthenticated(true);
-                router.push("/MainPage")
             })
             .catch((err) => {
                 toast.error(`Error Encountered: ${err.message}`)
