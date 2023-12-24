@@ -14,12 +14,10 @@ const Signup = () => {
     const [email, setEmail] = useState("");
     const [passwordOne, setPasswordOne] = useState("");
     const [passwordTwo, setPasswordTwo] = useState("");
-    const [error, setError] = useState(null);
     const router = useRouter()
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        setError(null)
         if(passwordOne === passwordTwo){
             createUserWithEmailAndPassword(auth,email, passwordOne)
             .then(authUser => {
