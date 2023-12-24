@@ -25,7 +25,7 @@ const page = () => {
 
         if(isAuthenticated){
             signInWithEmailAndPassword(auth, email, password)
-            .then(userAuth  => {
+            .then(()  => {
                 toast.success(`Welcome ${email}`)
                 setIsAuthenticated(true);
                 router.push("/MainPage")
