@@ -9,6 +9,11 @@ import { useRouter } from 'next/navigation';
 
 const auth = getAuth(app)
 
+let foo = null;
+if (typeof window !== "undefined") {
+  foo = window.localStorage.getItem("foo");
+}
+
 const page = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
