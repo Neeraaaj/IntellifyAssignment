@@ -33,6 +33,12 @@ const Signup = () => {
             toast.error("Passwords do not match!")
         }
     }
+    
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      console.log(window.innerWidth);
+    }
+  }, []);
   return (
     <section className="bg-white">
         <div className="lg:grid lg:min-h-screen lg:grid-cols-12">
