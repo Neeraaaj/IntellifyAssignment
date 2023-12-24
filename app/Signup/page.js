@@ -4,7 +4,6 @@ import React from 'react'
 import { useState } from 'react'
 import { createUserWithEmailAndPassword, getAuth } from 'firebase/auth'
 import {toast} from 'react-hot-toast'
-import { useRouter } from 'next/navigation'
 import app from '../firebase'
 import Link from 'next/link'
 
@@ -14,7 +13,6 @@ const Signup = () => {
     const [email, setEmail] = useState("");
     const [passwordOne, setPasswordOne] = useState("");
     const [passwordTwo, setPasswordTwo] = useState("");
-    const router = useRouter()
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -22,7 +20,6 @@ const Signup = () => {
             createUserWithEmailAndPassword(auth,email, passwordOne)
             .then(() => {
                 toast.success("You have successfully created your account!")
-                router.push('/Login')
             })
             .catch((err) => {
                 toast.error("Error Encountered: " + err.message)
